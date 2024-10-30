@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Insights on NETFLIX - CS418 Project</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+    <div id="introOverlay" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999;">
+        <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
+          <source src="intro.mov" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    
+
+<div class="container">
+    <div class="header">
+        <img src="logo2.png" alt="Netflix Logo" class="logo">
+        <h1 style="margin-bottom: 0; padding-bottom: 0%;">Data Insights on NETFLIX </h1>
+        <h4 style="margin-top: 0; padding-top: 0%; color: #E50914;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;CS418 PROJECT</h2>
+        <p class="intro" style="text-align: justify;">This project aims to uncover patterns in Netflix's vast library of films and TV shows, exploring how content types have evolved over time and identifying popular genres across different regions. Our analysis delves into viewer ratings, content distribution, and genre preferences to provide a comprehensive view.
+    </div>
+    <!-- Main options -->
+    <div class="main-options">
+        <div id="dataInsightsOption" class="option-button">Data Insights</div>
+        <div id="interactiveDashboardOption" class="option-button">Interactive Dashboard</div>
+        <div id="imdbPredictorOption" class="option-button">IMDb Predictor</div>
+    </div>
+    <div id="imdbPredictorContent" class="visualization-panel hidden">
+        <h2>IMDb Predictor</h2>
+        <p style="text-align: center;">Enter details to predict the IMDb score.</p>
+        <input type="text" id="typeInput" placeholder="Type" class="predictor-input">
+        <input type="text" id="directorInput" placeholder="Director" class="predictor-input">
+        <input type="text" id="countryInput" placeholder="Country" class="predictor-input" >
+        <input type="text" id="genreInput" placeholder="Genre" class="predictor-input" >
+        <button id="checkButton" class="predictor-button">Check</button>
+        <div id="predictionResult" class="prediction-result"></div>
+
+    </div>
+    
+    <div id="visualizationButtons" class="visualization-buttons hidden">
+        <div id="btn1" class="visualization-button active">1</div>
+        <div id="btn2" class="visualization-button">2</div>
+        <div id="btn3" class="visualization-button">3</div>
+        <div id="btn4" class="visualization-button">4</div>
+        <div id="btn5" class="visualization-button">5</div>
+        <div id="btn6" class="visualization-button">6</div>
+    </div>
+    <div id="panel" class="visualization-panel active-panel">
+        <div class="panel-content">
+            <h2>Introduction</h2>
+            <p style="text-align: justify;">Embark on a data-driven journey as we explore patterns in Netflix's vast catalog, decipher the evolution of content types, and shed light on popular genres from various corners of the globe. Our team, the Black Hawks, employs a fusion of Netflix's metadata, IMDB ratings, and Rotten Tomatoes scores to provide a multifaceted perspective. Below are the visualizations that showcase our findings and illustrate the narratives hidden within the data.</p>
+        </div>
+    </div>
+    <div id="panel1" class="visualization-panel">
+        <div class="panel-content">
+          <h2>Number of Titles Added to Netflix</h2>
+          <p>The bubble chart, line graph, and area graph all highlight Netflix’s growth in adding shows and movies over time. These charts show that after the 1990s, there was a big jump in the number of titles Netflix offered, matching up with the popularity of streaming online. The bigger bubbles, rising line, and wider shaded areas in the graphs all point to how Netflix has been working hard to give viewers more choices, especially in recent years. This increase is likely because Netflix wants to meet market demand and technological advancements.</p>
+          <div class="carousel-container">
+            <img src="VIS/img1.png" class="carousel-slide active-slide" alt="Number of Titles Added to Netflix">
+            <!-- The second image in the carousel -->
+            <img src="VIS/img1.1.png" class="carousel-slide" alt="Additional Graph">
+            <img src="VIS/img1.2.png" class="carousel-slide" alt="Additional Graph 2 ">
+            <!-- Buttons for navigating the carousel -->
+            <button class="carousel-button prev" onclick="moveSlide(-1)">❮</button>
+            <button class="carousel-button next" onclick="moveSlide(1)">❯</button>
+          </div>
+        </div>
+    </div>
+    <div id="panel2" class="visualization-panel">
+        <div class="panel-content">
+            <h2>Content Structure on Netflix: Movie Durations and TV Series Seasons</h2>
+            <p>The side-by-side histograms provide insights into Netflix's approach to content variety and viewer engagement. With a vast selection of movies and a notable presence of short-season TV series, Netflix seems to pursue a two-pronged approach: offering a wide-ranging movie collection for varied tastes while nurturing a lineup of TV series designed to keep viewers coming back season after season. Taken together, these charts highlight Netflix's calculated balance in curating and developing content to cater different entertainment preferences.</p>
+            <img src="VIS/img2.png" alt="Distribution of Netflix Content by Type">
+        </div>
+    </div>
+    <div id="panel3" class="visualization-panel">
+        <div class="panel-content">
+            <h2>IMDb Score Distribution Across Top 10 Netflix Genres</h2>
+            <p>The box plot shows IMDb score distributions across various Netflix genres, this helps us to identify which genres consistently delivered content that is highly rated, as well as to understand the range and distribution of viewer opinions within each genre. Such insights can be useful for Netflix's decisions regarding which genres to invest in and what type of content to prioritize in order to maintain high viewer satisfaction and engagement.</p>
+            <img src="VIS/img3.png" alt="IMDb Score Distribution Across Top 10 Netflix Genres">
+        </div>
+    </div>
+    <div id="panel4" class="visualization-panel">
+        <div class="panel-content">
+            <h2>Distribution of Content Types (Movies/TV Shows) by Top 10 Countries</h2>
+            <p>The graph presents the distribution of movies and TV shows on Netflix. The United States shows a high number of titles, especially in movies, followed by India. This graph helps us understand the global content strategy of Netflix, as it would indicate which regions' content is most prevalent on the platform and how Netflix caters to audiences. This analysis is interesting as it reflects the international expansion of the platform and might influence decisions regarding content production in different regions based on the audience's patterns.</p>
+            <img src="VIS/img4.png" alt="Word Cloud for Horror Genre">
+        </div>
+    </div>
+    <div id="panel5" class="visualization-panel">
+        <div class="panel-content">
+            <h2>Netflix Content Growth Over Time by Genre</h2>
+            <p>This visualization provides insights into how the variety and volume of content in different genres have evolved on Netflix over the years. By tracking the number of titles added each year across various genres, you can identify trends in content acquisition and production, such as the increasing popularity of certain genres over time. This can reflect changing viewer preferences and strategic decisions by Netflix to cater to these trends.</p>
+            <img src="VIS/img5.png" alt="Netflix Content Growth Over Time by Genre">
+        </div>
+    </div>
+    <div id="panel6" class="visualization-panel">
+        <div class="panel-content">
+            <h2>Viewer Ratings (IMDb Score) vs. Release Year for Netflix Titles</h2>
+            <p>The scatter plot of viewer ratings (IMDb Score) against the release year for Netflix titles offers a way to assess the perceived quality of content over time. This visualization can uncover insights such as trends in content quality and viewer reception over the years, helping to identify which periods and types of content have been most successful or well-received.</p>
+            <img src="VIS/img6.png" alt="Viewer Ratings (IMDb Score) vs. Release Year for Netflix Titles">
+        </div>
+    </div>
+    <div id="interactiveDashboardContent" class="visualization-panel hidden">
+        <iframe id="dashAppFrame" src="http://127.0.0.1:8050" style="width: 100%; height: calc(100vh - 60px); border: none;"></iframe>
+    </div>
+    
+</div>
+
+
+<script src="scripts.js"></script>
+
+</body>
+</html>
